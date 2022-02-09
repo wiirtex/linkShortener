@@ -1,5 +1,5 @@
 {
-    "shortLinkBase": "http://localhost:142/",
+    "shortLinkBase": "http://localhost:15001/",
     "cacheMaxLength": 1000,
     "cacheTimeToLive": 18000000000000,
     "cacheClearCoefficient": 0.2
