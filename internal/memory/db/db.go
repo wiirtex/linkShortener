@@ -45,7 +45,7 @@ func GetDBInstance() database {
 
 func (d database) AddEntry(entry memory.MemoryRequest) (int64, error) {
 
-	err := d.source.QueryRow(`INSERT INTO links (longLink, author, createdAt) VALUES ($1, $2, timestamp $3) returning id;`, entry.Long, entry.Author, entry.CreatedAt.Format("2006-01-02 15:04:05")).Scan(&entry.Short)
+	err := d.source.QueryRow(`INSERT INTO links (longLink, author, createdAt) VALUES ($1, $2, $3) returning id;`, entry.Long, entry.Author, entry.CreatedAt.Format("2006-01-02 15:04:05")).Scan(&entry.Short)
 	if err != nil {
 		return 0, err
 	}
